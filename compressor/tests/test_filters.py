@@ -1,9 +1,10 @@
 from __future__ import with_statement, unicode_literals
 from collections import defaultdict
 import io
+import mock
 import os
 import sys
-import mock
+import unittest
 
 import six
 from django.utils.encoding import smart_text
@@ -203,6 +204,7 @@ class JsMinTestCase(TestCase):
 
 
 class SlimItTestCase(TestCase):
+    @unittest.skip("slimit dependency is broken")
     def test_slimit_filter(self):
         content = """
         var foo = "bar";"""
